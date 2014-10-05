@@ -28,7 +28,7 @@ namespace Sandbox.Host
             }
             else
             {
-                Console.WriteLine("\t{0} assemblies loaded in this domain. Info about:", assemblies.Length);
+                Console.WriteLine("\t{0} assemblies loaded in this domain.", assemblies.Length);
                 foreach (var assembly in assemblies)
                 {
                     var simpleName = new AssemblyName(assembly.FullName).Name;
@@ -43,7 +43,7 @@ namespace Sandbox.Host
         public static void AccessToPrivateFields()
         {
             Console.WriteLine("===========================================================");
-            Console.WriteLine("Try get access to private fields in \"{0}\" domaint.",
+            Console.WriteLine("Try get access to private fields in \"{0}\" domain.",
                 AppDomain.CurrentDomain.FriendlyName);
             var data = new Data();
             data.DumpPassword();
