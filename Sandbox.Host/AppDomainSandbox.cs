@@ -2,7 +2,7 @@
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
-using Sandbox.Plugin;
+using Sandbox.Core;
 
 namespace Sandbox.Host
 {
@@ -15,11 +15,11 @@ namespace Sandbox.Host
             permissions.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));
             //permissions.AddPermission(new FileIOPermission(PermissionState.Unrestricted));
             var appDomain = AppDomain.CreateDomain(
-                "Sandbox Domain",
-                null,
-                setup
+                "Sandbox Domain"
+                , null
+                , setup
                 , permissions
-//                , typeof (AppDomainSandbox).Assembly.Evidence.GetHostEvidence<StrongName>()
+                , typeof(Class).Assembly.Evidence.GetHostEvidence<StrongName>()
             );
 
             return (AppDomainSandbox)(Activator.CreateInstance(
