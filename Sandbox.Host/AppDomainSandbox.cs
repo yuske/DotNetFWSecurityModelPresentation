@@ -4,7 +4,6 @@ using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
 using Sandbox.Plugin;
-using WebClient = Sandbox.Core.WebClient;
 
 namespace Sandbox.Host
 {
@@ -21,7 +20,7 @@ namespace Sandbox.Host
                 , null
                 , setup
                 , permissions
-                , typeof(WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
+                , typeof(Core.WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
             );
 
             return (AppDomainSandbox)(Activator.CreateInstance(
@@ -40,8 +39,16 @@ namespace Sandbox.Host
 
         public void LoadPlugin()
         {
-            var plugin = new Interaction();
-            plugin.Run();
+            try
+            {
+                var plugin = new Interaction();
+                plugin.Run();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.ToString());
+                Console.WriteLine();
+            }
         }
     }
 }

@@ -6,13 +6,16 @@
         {
             var appDomainSandbox = AppDomainSandbox.CreateInstance();
 
+            Utils.PrintAppDomainInfo();
+            appDomainSandbox.PrintAppDomainInfo();
+
             Utils.AccessToPrivateFields();
             appDomainSandbox.AccessToPrivateFields();
 
             //appDomainSandbox.LoadPlugin();
 
-            Utils.PrintAppDomainInfo();
-            appDomainSandbox.PrintAppDomainInfo();
+            //Utils.PrintAppDomainInfo();
+            //appDomainSandbox.PrintAppDomainInfo();
         }
     }
 }
