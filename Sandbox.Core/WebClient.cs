@@ -2,23 +2,21 @@
 using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Security;
-using System.Security.Permissions;
 
 namespace Sandbox.Core
 {
     public class WebClient
     {
-        private const string LogFileName = "log.txt";
+        private readonly Logger logger = new Logger("_log.txt");
 
         public WebClient()
         {
-            WriteToLog("WebClient.ctor()");
+            logger.Write("WebClient.ctor()");
         }
 
         public string Get(string url)
         {
-            WriteToLog(String.Format("Get \"{0}\" url...", url));
+            logger.Write("Get \"{0}\" url...", url);
 
             var request = WebRequest.Create(url);
             var response = request.GetResponse();
@@ -32,13 +30,6 @@ namespace Sandbox.Core
             streamReader.Close();
             response.Close(); 
             return body;
-        }
-
-        [SecuritySafeCritical]
-        private void WriteToLog(string message)
-        {
-            new FileIOPermission(PermissionState.Unrestricted).Assert();
-            File.AppendAllText(LogFileName, message);
         }
     }
 }
