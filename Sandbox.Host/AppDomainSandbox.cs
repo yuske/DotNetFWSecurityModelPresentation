@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Net;
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
-using Sandbox.Core;
+using Sandbox.Plugin;
+using WebClient = Sandbox.Core.WebClient;
 
 namespace Sandbox.Host
 {
@@ -13,13 +15,13 @@ namespace Sandbox.Host
             var setup = new AppDomainSetup { ApplicationBase = Environment.CurrentDirectory };
             var permissions = new PermissionSet(null);
             permissions.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution));
-            //permissions.AddPermission(new FileIOPermission(PermissionState.Unrestricted));
+            permissions.AddPermission(new WebPermission(NetworkAccess.Connect, "http://www.ptsecurity.com"));
             var appDomain = AppDomain.CreateDomain(
                 "Sandbox Domain"
                 , null
                 , setup
                 , permissions
-                , typeof(Class).Assembly.Evidence.GetHostEvidence<StrongName>()
+                , typeof(WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
             );
 
             return (AppDomainSandbox)(Activator.CreateInstance(
@@ -36,13 +38,10 @@ namespace Sandbox.Host
             Utils.AccessToPrivateFields();
         }
 
-        public void Test1()
+        public void LoadPlugin()
         {
-/*
-            var i = new Interaction();
-            var response = i.Run1();
-            Console.WriteLine("Responce: {0}", response);
-*/
+            var plugin = new Interaction();
+            plugin.Run();
         }
     }
 }

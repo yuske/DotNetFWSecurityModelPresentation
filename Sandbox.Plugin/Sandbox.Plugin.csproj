@@ -52,10 +52,6 @@
       <Project>{d92da2a3-9750-4094-82b0-9edf317787b6}</Project>
       <Name>Sandbox.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\VBLibrary\VBLibrary.vbproj">
-      <Project>{46d19d0a-75c5-4014-84e4-20018a4e5bb5}</Project>
-      <Name>VBLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

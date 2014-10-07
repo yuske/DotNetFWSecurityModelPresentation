@@ -8,8 +8,10 @@
             var appDomainSandbox = AppDomainSandbox.CreateInstance();
             appDomainSandbox.PrintAppDomainInfo();
 
-            Utils.AccessToPrivateFields();
-            appDomainSandbox.AccessToPrivateFields();
+            //Utils.AccessToPrivateFields();
+            //appDomainSandbox.AccessToPrivateFields();
+
+            appDomainSandbox.LoadPlugin();
         }
     }
 }
