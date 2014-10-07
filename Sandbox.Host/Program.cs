@@ -4,14 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Utils.PrintAppDomainInfo();
             var appDomainSandbox = AppDomainSandbox.CreateInstance();
+
+            Utils.AccessToPrivateFields();
+            appDomainSandbox.AccessToPrivateFields();
+
+            //appDomainSandbox.LoadPlugin();
+
+            Utils.PrintAppDomainInfo();
             appDomainSandbox.PrintAppDomainInfo();
-
-            //Utils.AccessToPrivateFields();
-            //appDomainSandbox.AccessToPrivateFields();
-
-            appDomainSandbox.LoadPlugin();
         }
     }
 }

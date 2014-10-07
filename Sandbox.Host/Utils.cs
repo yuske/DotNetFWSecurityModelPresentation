@@ -42,9 +42,9 @@ namespace Sandbox.Host
 
         public static void AccessToPrivateFields()
         {
+            Console.WriteLine("===========================================================");
             try
             {
-                Console.WriteLine("===========================================================");
                 Console.WriteLine("Try get access to private fields in \"{0}\" domain.",
                     AppDomain.CurrentDomain.FriendlyName);
                 var data = new Data();
@@ -53,13 +53,14 @@ namespace Sandbox.Host
                 proxy.Password = "my-password";
                 data.DumpPassword();
                 Console.WriteLine("DataProxy.TestField = {0}", proxy.TestField);
-                Console.WriteLine("===========================================================");
-                Console.WriteLine();
             }
             catch (Exception exception)
             {
                 Console.WriteLine(exception.Message);
             }
+
+            Console.WriteLine("===========================================================");
+            Console.WriteLine();
         }
     }
 }

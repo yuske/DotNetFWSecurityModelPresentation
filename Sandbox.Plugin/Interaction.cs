@@ -27,6 +27,7 @@ namespace Sandbox.Plugin
                 Console.WriteLine("Error requst url \"{0}\":", url);
                 Console.WriteLine(exception.Message);
             }
+
             Console.WriteLine("===========================================================");
             Console.WriteLine();
         }
