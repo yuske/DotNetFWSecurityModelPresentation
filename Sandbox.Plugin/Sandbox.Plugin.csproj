@@ -48,9 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sandbox.Core\Sandbox.Core.csproj">
+    <ProjectReference Include="..\Sandbox.Core\Sandbox.Core.API.csproj">
       <Project>{d92da2a3-9750-4094-82b0-9edf317787b6}</Project>
-      <Name>Sandbox.Core</Name>
+      <Name>Sandbox.Core.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@ using System.IO;
 using System.Security;
 using System.Security.Permissions;
 
-namespace Sandbox.Core
+namespace Sandbox.Core.API
 {
     public class Logger
     {

@@ -64,9 +64,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sandbox.Core\Sandbox.Core.csproj">
+    <ProjectReference Include="..\Sandbox.Core\Sandbox.Core.API.csproj">
       <Project>{d92da2a3-9750-4094-82b0-9edf317787b6}</Project>
-      <Name>Sandbox.Core</Name>
+      <Name>Sandbox.Core.API</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sandbox.Plugin\Sandbox.Plugin.csproj">
       <Project>{cdb60241-c31e-4aaf-9ee4-29475412d4b7}</Project>

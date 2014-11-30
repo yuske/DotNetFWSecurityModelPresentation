@@ -7,8 +7,8 @@
     <ProjectGuid>{D92DA2A3-9750-4094-82B0-9EDF317787B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sandbox.Core</RootNamespace>
-    <AssemblyName>Sandbox.Core</AssemblyName>
+    <RootNamespace>Sandbox.Core.API</RootNamespace>
+    <AssemblyName>Sandbox.Core.API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

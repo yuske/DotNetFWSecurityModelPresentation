@@ -20,7 +20,7 @@ namespace Sandbox.Host
                 , null
                 , setup
                 , permissions
-                , typeof(Core.WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
+                , typeof(Core.API.WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
             );
 
             return (AppDomainSandbox)(Activator.CreateInstance(

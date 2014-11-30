@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 
-namespace Sandbox.Core
+namespace Sandbox.Core.API
 {
     public class WebClient
     {
