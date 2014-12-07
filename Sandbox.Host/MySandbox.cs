@@ -7,9 +7,9 @@ using Sandbox.Plugin;
 
 namespace Sandbox.Host
 {
-    internal class AppDomainSandbox : MarshalByRefObject
+    internal class MySandbox : MarshalByRefObject
     {
-        public static AppDomainSandbox CreateInstance()
+        public static MySandbox CreateInstance()
         {
             var setup = new AppDomainSetup { ApplicationBase = Environment.CurrentDirectory };
             var permissions = new PermissionSet(null);
@@ -23,18 +23,8 @@ namespace Sandbox.Host
                 , typeof(Core.API.WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
             );
 
-            return (AppDomainSandbox)(Activator.CreateInstance(
-                appDomain, "Sandbox.Host", "Sandbox.Host.AppDomainSandbox").Unwrap());
-        }
-
-        public void PrintAppDomainInfo()
-        {
-            Utils.PrintAppDomainInfo();
-        }
-
-        public void AccessToPrivateFields()
-        {
-            Utils.AccessToPrivateFields();
+            return (MySandbox)(Activator.CreateInstance(
+                appDomain, "Sandbox.Host", "Sandbox.Host.MySandbox").Unwrap());
         }
 
         public void LoadPlugin()
@@ -49,6 +39,11 @@ namespace Sandbox.Host
                 Console.WriteLine(exception.ToString());
                 Console.WriteLine();
             }
+        }
+
+        public void PrintAppDomainInfo()
+        {
+            Utils.PrintAppDomainInfo(typeof(MySandbox));
         }
     }
 }
