@@ -56,8 +56,6 @@
     <Compile Include="..\Utils.cs">
       <Link>Utils.cs</Link>
     </Compile>
-    <Compile Include="Data.cs" />
-    <Compile Include="DataProxy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MySandbox.cs" />
