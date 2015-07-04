@@ -50,6 +50,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExecutionHelper.cs" />
+    <Compile Include="IPlugin.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="WebClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

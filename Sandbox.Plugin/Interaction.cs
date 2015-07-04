@@ -3,7 +3,7 @@ using Sandbox.Core.API;
 
 namespace Sandbox.Plugin
 {
-    public class Interaction
+    public class Interaction : IPlugin
     {
         private readonly WebClient webClient = new WebClient();
 

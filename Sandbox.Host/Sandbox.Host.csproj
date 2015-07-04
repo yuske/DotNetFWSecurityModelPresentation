@@ -56,6 +56,7 @@
     <Compile Include="..\Utils.cs">
       <Link>Utils.cs</Link>
     </Compile>
+    <Compile Include="PluginFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MySandbox.cs" />
@@ -71,6 +72,10 @@
     <ProjectReference Include="..\Sandbox.Plugin\Sandbox.Plugin.csproj">
       <Project>{cdb60241-c31e-4aaf-9ee4-29475412d4b7}</Project>
       <Name>Sandbox.Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VBLibrary\VBLibrary.vbproj">
+      <Project>{46d19d0a-75c5-4014-84e4-20018a4e5bb5}</Project>
+      <Name>VBLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

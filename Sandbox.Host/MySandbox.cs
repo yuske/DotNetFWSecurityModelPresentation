@@ -3,7 +3,6 @@ using System.Net;
 using System.Security;
 using System.Security.Permissions;
 using System.Security.Policy;
-using Sandbox.Plugin;
 
 namespace Sandbox.Host
 {
@@ -21,17 +20,18 @@ namespace Sandbox.Host
                 , setup
                 , permissions
                 , typeof(Core.API.WebClient).Assembly.Evidence.GetHostEvidence<StrongName>()
+                , typeof(VBLibrary.ExceptionHandler).Assembly.Evidence.GetHostEvidence<StrongName>()
             );
 
             return (MySandbox)(Activator.CreateInstance(
                 appDomain, "Sandbox.Host", "Sandbox.Host.MySandbox").Unwrap());
         }
 
-        public void LoadPlugin()
+        public void LoadPlugin(PluginKind pluginKind)
         {
             try
             {
-                var plugin = new Interaction();
+                var plugin = PluginFactory.Create(pluginKind);
                 plugin.Run();
             }
             catch (Exception exception)

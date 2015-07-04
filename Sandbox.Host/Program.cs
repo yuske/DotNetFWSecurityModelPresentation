@@ -6,7 +6,8 @@
         {
             var appDomainSandbox = MySandbox.CreateInstance();
 
-            appDomainSandbox.LoadPlugin();
+            //appDomainSandbox.LoadPlugin(PluginKind.Interaction);
+            appDomainSandbox.LoadPlugin(PluginKind.ExceptionFilterAttackSample);
 
             Utils.PrintAppDomainInfo(typeof(MySandbox));
             appDomainSandbox.PrintAppDomainInfo();
