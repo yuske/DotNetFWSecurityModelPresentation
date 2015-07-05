@@ -14,15 +14,8 @@ namespace Sandbox.Core.API
 
         public bool Execute()
         {
-            try
-            {
-                Process.Start(path);
-                return true;
-            }
-            catch (Exception exception)
-            {
-                return false;
-            }
+            Process.Start(path);
+            return true;
         }
 
         public Func<bool> GetExecuteFunc()
